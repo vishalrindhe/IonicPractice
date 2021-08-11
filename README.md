@@ -1,3 +1,2 @@
-# multilangual
-# ionicpractice
+
 # IonicPractice
