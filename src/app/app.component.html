@@ -1,3 +1,31 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>languagePopover</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <label for="">
+    {{ 'HOME.SELECT' | translate }}
+    <select #langselect (change)="translate.use(langselect.value)">
+      <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{lang}}</option>
+    </select>
+  </label>
+
+  
+    <ion-label>{{ 'HOME.SELECT' | translate }}</ion-label>
+    <ion-select #langselect (cancel)="onCancel()" (ionChange)="onChange(langselect.value)">
+      <ion-select-option *ngFor="let lang of translate.getLangs()" (value)="lang">{{lang}}</ion-select-option>
+    </ion-select>
+  <div>
+      <h2 [translate]="'HOME.TITLE'"></h2>
+      <p>{{ 'HOME.TEXT' | translate }}</p>
+  
+      
+    </div>
+    
+</ion-content> -->
 <ion-app>
+
   <ion-router-outlet></ion-router-outlet>
-</ion-app>
+  </ion-app>

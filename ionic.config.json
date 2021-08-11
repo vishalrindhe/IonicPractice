@@ -1,5 +1,7 @@
 {
   "name": "multilanguage",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

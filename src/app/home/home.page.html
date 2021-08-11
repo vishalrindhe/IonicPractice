@@ -1,20 +1,33 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title translate>home.title</ion-title>
   </ion-toolbar>
 </ion-header>
+  
+  <ion-content>
+    <ion-item lines="none">
+        <ion-toggle (ionChange)="changeTheme($event)" slot="end"></ion-toggle>
+      </ion-item>
+    <!-- <ion-card> -->
+      <!--  other stuff -->
+      <!-- <ion-card-content> -->
+        <p translate [translateParams]="{ lang: language }">home.invite</p>
+  
+        <ion-item> <!-- add this block -->
+          <ion-label translate>Language</ion-label>
+          <ion-select [(ngModel)]='language' (ionChange)='languageChange()' selected-text [placeholder]='"home.languageChangePlaceholder" | translate'>
+             <ion-select-option *ngFor="let item of allLang" value={{item.notation}}>{{item.name}}</ion-select-option>
+            <!-- <ion-select-option value='ru'>Russian</ion-select-option> -->
+            <!-- <ion-select-option value='en'>English</ion-select-option>
+            <ion-select-option value='ch'>Chinese</ion-select-option> -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+          </ion-select>
+        </ion-item> <!-- add this block (end) -->
+      <!-- </ion-card-content> -->
+    <!-- </ion-card> -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+    <h1 translate>home.tabName</h1>
+  <ion-button color="newcolor" >ABC</ion-button>
+    <!--  other stuff -->
+  </ion-content>
+

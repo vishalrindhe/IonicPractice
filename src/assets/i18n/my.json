@@ -1,0 +1,15 @@
+{
+    "HEADER": {
+        "language": "Bahasa",
+        "logout": "Log keluar"
+    },
+    "LOGIN": {
+        "head": "Log masuk",
+        "signup": "Mendaftar ",
+        "forgot": "Lupa kata laluan?",
+        "account": "Tidak mempunyai akaun ? ",
+        "email": "ID emel ",
+        "password": "Kata Laluan",
+        "or": "ATAU"
+    }
+}
