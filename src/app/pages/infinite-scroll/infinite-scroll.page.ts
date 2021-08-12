@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { IonInfiniteScroll, LoadingController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { ToastController } from '@ionic/angular';
 
@@ -12,7 +12,8 @@ export class InfiniteScrollPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   constructor(
     private http: HttpClient,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public loadingController: LoadingController
   ) {
     this.addMoreItem();
     this.loadUsers();
@@ -25,6 +26,12 @@ export class InfiniteScrollPage implements OnInit {
   page = 0;
   count = 10;
   message;
+
+  loading = this.loadingController.create({
+    cssClass: 'my-custom-class',
+    message: 'Please wait...',
+    duration: 1000
+  });
 
   async presentToast() {
     const toast = await this.toastController.create({
@@ -41,13 +48,15 @@ export class InfiniteScrollPage implements OnInit {
     console.log('onDidDismiss resolved with role', role);
   }
 
-  loadUsers() {
+  async loadUsers() {
+    (await this.loading).present();
     this.http
       .get(`https://randomuser.me/api/?results=10&page=${this.page}`)
-      .subscribe((res) => {
+      .subscribe(async (res) => {
         console.log(res);
         this.users = this.users.concat(res[`results`]);
         console.log('users:', this.users);
+        (await this.loading).onDidDismiss();
       });
   }
 
