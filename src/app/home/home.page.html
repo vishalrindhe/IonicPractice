@@ -1,13 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title translate>home.title</ion-title>
+    <ion-title slot="start" translate>home.title</ion-title>
+    <ion-select slot="end" [(ngModel)]="selectedTheme" (ionChange)="changeTheme($event)">
+      <ion-select-option value="light">Light</ion-select-option>
+      <ion-select-option value="dark">Dark</ion-select-option>
+      <ion-select-option value="solarized-dark">Solarized-Dark</ion-select-option>
+    </ion-select>
   </ion-toolbar>
 </ion-header>
   
   <ion-content>
-    <ion-item lines="none">
+    <!-- <ion-item lines="none">
         <ion-toggle (ionChange)="changeTheme($event)" slot="end"></ion-toggle>
-      </ion-item>
+      </ion-item> -->
+
+      <ion-label [translate]="'Select Theme'">Theme</ion-label>
+      <ion-select [(ngModel)]="selectedTheme" (ionChange)="changeTheme($event)">
+        <ion-select-option value="light">Light</ion-select-option>
+        <ion-select-option value="dark">Dark</ion-select-option>
+        <ion-select-option value="solarized-dark">Solarized-Dark</ion-select-option>
+      </ion-select><br>
+
+
+
+
     <!-- <ion-card> -->
       <!--  other stuff -->
       <!-- <ion-card-content> -->
@@ -28,6 +44,7 @@
 
     <h1 translate>home.tabName</h1>
   <ion-button color="newcolor" >ABC</ion-button>
+  <ion-button routerLink='/infinite-scroll'>infiniteScroll</ion-button>
     <!--  other stuff -->
   </ion-content>
 

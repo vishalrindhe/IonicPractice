@@ -24,16 +24,27 @@ export class HomePage {
     this.translateService.use(this.language);
   } 
 
- changeTheme(event){
-  console.log(event.detail.checked);
-  if(event.detail.checked){
-    document.body.setAttribute('color-theme','dark')
-  } else{
-    document.body.setAttribute('color-theme','light')
+//  changeTheme(event){
+//   console.log(event.detail.checked);
+//   if(event.detail.checked){
+//     document.body.setAttribute('color-theme','new')
+//   } else{
+//     document.body.setAttribute('color-theme','light')
 
-  }
+//   }
   
- }
+//  }
+selectedTheme;
+ changeTheme(event){
+  console.log(event.detail.value);
+  if(event.detail.value === 'dark'){
+    document.body.setAttribute('color-theme','dark');
+  } else if(event.detail.value === 'light'){
+    document.body.setAttribute('color-theme','light');
+  }else if(event.detail.value === 'solarized-dark'){
+    document.body.setAttribute('color-theme','new');
+  }
+}
   
 
 }
