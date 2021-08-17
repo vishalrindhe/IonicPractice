@@ -1,10 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title slot="start">infiniteScroll</ion-title>
-    <ion-icon slot="end" name="home-outline" routerLink='/'></ion-icon>  </ion-toolbar>
+    <ion-title slot='end' routerLink='/'>
+      <ion-icon name="home"></ion-icon>
+    </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- <div id="abc"> -->
+    <ion-icon class="icon-bell-o">
+
+    </ion-icon>
+
+  <!-- </div> -->
+  <ion-icon class="icon-gift"></ion-icon>
+  <ion-icon class="icon-bell"></ion-icon>
+  <ion-icon class="icon-bell-o"></ion-icon>
+  <ion-icon class="icon-headphones"></ion-icon>
+  <ion-icon class="icon-coins"></ion-icon>
+
+
+  <ion-icon ></ion-icon>
+  <li><i class="icon icon-gift"></i></li>
   <ion-card *ngFor="let item of users">
     <ion-item>
       <ion-avatar slot="start">

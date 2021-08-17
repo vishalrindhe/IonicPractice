@@ -1,6 +1,8 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+// @import '../assets/scss/modules/icon.scss';
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
@@ -82,6 +84,15 @@
   --ion-color-newcolor-contrast-rgb: 255,255,255;
   --ion-color-newcolor-shade: #540008;
   --ion-color-newcolor-tint: #701a22;
+
+  .ion-color-newcolor {
+    --ion-color-base: var(--ion-color-newcolor);
+    --ion-color-base-rgb: var(--ion-color-newcolor-rgb);
+    --ion-color-contrast: var(--ion-color-newcolor-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-newcolor-contrast-rgb);
+    --ion-color-shade: var(--ion-color-newcolor-shade);
+    --ion-color-tint: var(--ion-color-newcolor-tint);
+  }
 }
 
 // @media (prefers-color-scheme: dark) {

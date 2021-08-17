@@ -49,19 +49,26 @@ export class InfiniteScrollPage implements OnInit {
   }
 
   async loadUsers() {
+    // const loading = this.loadingController.create({
+    //   cssClass: 'my-custom-class',
+    //   message: 'Please wait...',
+    //   duration: 1000
+    // });
     (await this.loading).present();
     this.http
       .get(`https://randomuser.me/api/?results=10&page=${this.page}`)
       .subscribe(async (res) => {
+        (await this.loading).present();
+
         console.log(res);
         this.users = this.users.concat(res[`results`]);
         console.log('users:', this.users);
-        (await this.loading).onDidDismiss();
+        // (await this.loading).onDidDismiss();
       });
   }
 
   loadData(event) {
-    setTimeout(() => {
+    setTimeout(async () => {
       if (this.count == 50) {
         // App logic to determine if all data is loaded
         // and disable the infinite scroll
@@ -76,8 +83,10 @@ export class InfiniteScrollPage implements OnInit {
         this.presentToast();
         this.count = this.count + 10;
         console.log('count:', this.count);
-
+        
         this.loadUsers();
+        (await this.loading).onDidDismiss();
+
         event.target.complete();
       }
     }, 2000);

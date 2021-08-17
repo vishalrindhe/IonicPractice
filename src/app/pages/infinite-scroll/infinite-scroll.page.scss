@@ -6,3 +6,17 @@
     --border-radius:10px;  
     --background: #eb445a;
 }
+
+
+.ion-gift{
+    color: #eb445a;
+}
+
+// #abc{
+    ion-icon{
+        &.icon-bell-o{
+            font-size: 50px;
+            color: #eb445a;
+        }
+    }
+// }

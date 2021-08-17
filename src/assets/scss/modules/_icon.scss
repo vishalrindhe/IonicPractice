@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'icomoon';
+  // src: url('../../icon/');
+  src:  url('../../icon/icomoon.eot?fonya8');
+  src:  url('../../icon/icomoon.eot?fonya8#iefix') format('embedded-opentype'),
+    url('../../icon/icomoon.ttf?fonya8') format('truetype'),
+    url('../../icon/icomoon.woff?fonya8') format('woff'),
+    url('../../icon/icomoon.svg?fonya8#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-coins:before {
+  content: "\e900";
+}
+.icon-money:before {
+  content: "\e900";
+}
+.icon-gift:before {
+  content: "\f06b";
+}
+.icon-bell-o:before {
+  content: "\f0a2";
+}
+.icon-headphones:before {
+  content: "\e910";
+}
+.icon-bell:before {
+  content: "\ea2e";
+}
